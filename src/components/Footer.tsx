@@ -151,19 +151,92 @@ export default function Footer({ business, activeTab, setActiveTab, openCms }: F
 
       </div>
 
-      {/* Partners Logos section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-stone-150 flex flex-wrap justify-between items-center text-xs text-stone-500 font-semibold">
-        <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4 md:mb-0">
-          <span>Inspiration & standards:</span>
-          <span className="text-stone-800 tracking-wider">MAKEMYTRIP COOPERATION</span>
-          <span className="text-stone-800 tracking-wider">THOMAS COOK COUPLING</span>
-          <span className="text-stone-800 tracking-wider">SOTC TRUSTED</span>
-          <span className="text-stone-800 tracking-wider">THRILLOPHILIA INSPIRED</span>
+      {/* Cute Travel Animation section (Replacing former Inspiration and Standards) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-stone-150 flex flex-col md:flex-row justify-between items-stretch md:items-center gap-6">
+        
+        {/* Dynamic Flying Jet & Landmarks Interactive Path */}
+        <div className="flex-1 min-w-[285px] md:max-w-xl bg-stone-50/70 border border-stone-200/60 rounded-xl p-3.5 select-none relative overflow-hidden font-sans shadow-inner">
+          <style>{`
+            @keyframes planeTravel {
+              0% { left: -8%; transform: translateY(2px) rotate(15deg); opacity: 0; }
+              5% { opacity: 1; }
+              45% { transform: translateY(-4px) rotate(10deg); }
+              50% { transform: translateY(3px) rotate(0deg); }
+              55% { transform: translateY(-2px) rotate(-10deg); }
+              90% { opacity: 1; }
+              100% { left: 108%; transform: translateY(2px) rotate(15deg); opacity: 0; }
+            }
+            .animate-plane-travel {
+              animation: planeTravel 14s linear infinite;
+              position: absolute;
+              top: calc(50% + 2px);
+            }
+          `}</style>
+          
+          <div className="flex items-center justify-between mb-2 px-1">
+            <span className="text-[9.5px] uppercase font-bold tracking-widest text-amber-700/90 font-mono">
+              Live Safari Tracker Route
+            </span>
+            <span className="text-[9px] text-stone-500 font-bold animate-pulse font-mono">
+              ★ Auto-Navigating...
+            </span>
+          </div>
+
+          <div className="relative h-12 flex items-center justify-between px-4">
+            {/* Dashed flight trajectory vector line */}
+            <div className="absolute left-6 right-6 h-[1.5px] border-t-2 border-dashed border-amber-400/40 z-0" />
+            
+            {/* Animated Flight */}
+            <div className="animate-plane-travel z-10 flex items-center space-x-1 bg-white/95 border border-amber-300/40 rounded-full py-0.5 px-2 shadow-sm">
+              <Compass size={11} className="text-amber-500 animate-spin-slow flex-shrink-0" />
+              <span className="text-[8.5px] font-bold text-amber-800 tracking-tight font-mono select-none">
+                SM Jet ✈
+              </span>
+            </div>
+
+            {/* Travel Stops */}
+            <div className="relative z-10 flex flex-col items-center scale-90 sm:scale-100">
+              <div className="bg-white border-2 border-amber-500 rounded-full w-7 h-7 flex items-center justify-center shadow-sm font-semibold select-none text-[11px] hover:bg-amber-100 duration-200">
+                🚩
+              </div>
+              <span className="text-[8px] font-extrabold text-stone-600 mt-1 uppercase tracking-wide font-mono">Hyd</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center scale-90 sm:scale-100">
+              <div className="bg-white border border-stone-200 rounded-full w-7 h-7 flex items-center justify-center shadow-sm text-[12px] hover:border-amber-400 duration-200 cursor-pointer">
+                🏔️
+              </div>
+              <span className="text-[8px] font-extrabold text-stone-600 mt-1 uppercase tracking-wide font-mono">Kashmir</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center scale-90 sm:scale-100">
+              <div className="bg-white border border-stone-200 rounded-full w-7 h-7 flex items-center justify-center shadow-sm text-[12px] hover:border-amber-400 duration-200 cursor-pointer">
+                🏖️
+              </div>
+              <span className="text-[8px] font-extrabold text-stone-600 mt-1 uppercase tracking-wide font-mono">Maldives</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center scale-90 sm:scale-100">
+              <div className="bg-white border border-stone-200 rounded-full w-7 h-7 flex items-center justify-center shadow-sm text-[12px] hover:border-amber-400 duration-200 cursor-pointer">
+                🕌
+              </div>
+              <span className="text-[8px] font-extrabold text-stone-600 mt-1 uppercase tracking-wide font-mono">Dubai</span>
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center scale-90 sm:scale-100">
+              <div className="bg-white border border-stone-200 rounded-full w-7 h-7 flex items-center justify-center shadow-sm text-[12px] hover:border-amber-400 duration-200 cursor-pointer">
+                🦁
+              </div>
+              <span className="text-[8px] font-extrabold text-stone-600 mt-1 uppercase tracking-wide font-mono">S'pore</span>
+            </div>
+
+          </div>
         </div>
+
         <div>
           <button 
             onClick={openCms}
-            className="flex items-center space-x-1.5 text-stone-700 hover:text-amber-800 bg-stone-50 hover:bg-stone-100 border border-stone-200 px-3.5 py-2 rounded-md transition-all cursor-pointer shadow-sm text-xs font-bold"
+            className="flex items-center space-x-1.5 text-stone-700 hover:text-amber-800 bg-stone-50 hover:bg-stone-100 border border-stone-200 px-3.5 py-2.5 rounded-md transition-all cursor-pointer shadow-sm text-xs font-bold"
           >
             <Settings size={12} className="text-amber-600 animate-spin-slow" />
             <span>Owner Dashboard & Content Editor</span>
